@@ -11,7 +11,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1em;
+	font-size: 1em;
 	color: rgb(6, 81, 84);
 	margin: 1rem 1rem 1rem 20px;
 }
@@ -27,6 +27,7 @@ div {
 
 .div2 {
 	float: right;
+    
 }
 
 .div3 {
@@ -53,5 +54,7 @@ div {
 	margin: 0;
 	position: sticky;
 	bottom: 0;
-    color: cadetblue;
+	color: cadetblue;
+	
+	box-shadow: 5px 5px 15px  rgb(50, 84, 85);
 }
