@@ -4,57 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Css grid øving</title>
+    <title>css grid testing</title>
     <style>
         body {
-            padding: 0;
             margin: 0;
+            padding: 0;
         }
         div.page {
             height: 100vh;
             display: grid;
-            grid-template-columns: 150px 3fr;
-            grid-template-rows: 20px 10fr 20px;
-            grid-template-areas: 'menu header'
-                                'menu mainContent'
-                                'footer footer';
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 40px 10fr 30px;
+            grid-template-areas: 'header header' 
+                                 'nav main'
+                                 'footer footer';
         }
+
         div.header {
-            background-color: rgb(97, 167, 228);
+            background-color: #68B9DA;
             grid-area: header;
         }
-        div.menu {
-            background-color: aquamarine;
-            grid-area: menu;
+        div.nav {
+            background-color: white;
+            grid-area: nav;
         }
-        div.mainContent {
-            background-color: rgb(33, 87, 87);
-            grid-area: mainContent;
+
+        div.main {
+            background-color: rgb(255, 255, 255);
+            grid-area: main;
+
         }
+
         div.footer {
-            background-color: bisque;
+            background-color: rgb(109, 109, 109);
             grid-area: footer;
         }
-@media only screen and (max-width: 600px){ 
-    div.page {
-            
-            grid-template-columns: 1fr;
-            grid-template-rows: 20px 1fr 4fr 20px;
-            grid-template-areas: 'header'
-                                'menu' 
-                                'mainContent'
-                                'footer';
-}
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin: 0%;
+        }
+        h2 {
+            margin: 10px 0 10px 10px;
+        }
+        p.nav {
+            color: red;
+            margin: 0 0 0 10px;
+           
+
+        }
+        p.home {
+            font-weight: 800;
+        }
+
 
     </style>
+
 </head>
+
 <body>
-    <div class="page">
-        <div class="header">Header</div>
-        <div class="menu">Menu</div>
-        <div class="mainContent">Main content</div>
-        <div class="footer">Footer</div>
+<div class="page">
+    <div class="header">
+        <h1>My website</h1>
     </div>
+
+    <div class="nav">
+        <h2>Navigation</h2>
+        <p class="nav home">Home</p>
+        <p class='nav'>About</p>
+        <p class='nav'>Contact</p>
+
+          
+    </div>
+    <div class="main">
+        <h3>Home page</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste inventore non qui, modi expedita nulla optio repudiandae consequuntur error eaque exercitationem earum mollitia blanditiis itaque, asperiores cupiditate illo ipsam reprehenderit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste inventore non qui, modi expedita nulla optio repudiandae consequuntur error eaque exercitationem earum mollitia blanditiis itaque, asperiores cupiditate illo ipsam reprehenderit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste inventore non qui, modi expedita nulla optio repudiandae consequuntur error eaque exercitationem earum mollitia blanditiis itaque, asperiores cupiditate illo ipsam reprehenderit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste inventore non qui, modi expedita nulla optio repudiandae consequuntur error eaque exercitationem earum mollitia blanditiis itaque, asperiores cupiditate illo ipsam reprehenderit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste inventore non qui, modi expedita nulla optio repudiandae consequuntur error eaque exercitationem earum mollitia blanditiis itaque, asperiores cupiditate illo ipsam reprehenderit.</p>
+    </div>
+    <div class="footer">footer</div>
+</div>
     
 </body>
 </html>
