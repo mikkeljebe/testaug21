@@ -1,9 +1,46 @@
 h1 {
-    font-size: 2em;
-    color: blue;
+	font-size: 2em;
+	color: blue;
+    margin: 1.5rem 1.5rem 1.5rem 20px;
 }
 
 h2 {
-    font-size: 2em;
-    color: cadetblue;
+	font-size: 2em;
+	color: cadetblue;
+    margin: 1rem 1rem 1rem 20px;
+}
+
+div {
+	background-color: rgb(225, 250, 249);
+	margin: 20px 20px;
+	width: 30%;
+	height: 300px;
+	border: 5px solid cadetblue;
+	float: left;
+}
+
+.div2 {
+	float: right;
+}
+
+.div3 {
+	clear: both;
+}
+
+.div4 {
+	float: right;
+}
+
+.div5 {
+	clear: both;
+}
+
+.div6 {
+	float: right;
+}
+
+.footer {
+    clear: both;
+	width: 100%;
+    height: 50px;
 }
