@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG</title>
+    <style>
+        .snømann {
+            width: 400px;
+            height: 700px;
+            padding: 10px;
+            
+        }
+
+        .hode {
+            fill: rgb(225, 225, 225);
+        } 
+
+        .kropp {
+            fill: rgb(225, 225, 225);
+        }
+
+        .ben {
+            fill: rgb(225, 225, 225);
+        }
+
+        .øye {
+            fill: black;
+        }
+
+        .nese {
+            fill: chocolate;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Snømann!</h1>
+
+    <svg class="snømann">
+       <circle class='hode' cx="200" cy="150" r="60" fill="white" stroke='grey' stroke-width='1'/>  
+       <circle class='kropp' cx="200" cy="290" r="80" fill="white" stroke='grey' stroke-width='1'/>  
+       <circle class='ben' cx="200" cy="470" r="100" fill="white" stroke='grey' stroke-width='1'/>  
+       <circle class='øye' cx="220" cy="135" r="8" fill="white" />  
+       <circle class='øyehvit' cx="218" cy="132" r="1" fill="white" />  
+       <circle class='øye' cx="180" cy="135" r="8" fill="white" />  
+       <circle class='øyehvit' cx="178" cy="132" r="1" fill="white" />  
+       <polygon class='nese' points='190,160 210,160 200,190' fill="orange" />  
+       <ellipse class='hatt' cx="200" cy="100" rx="80" ry="10" fill="black" />
+       <ellipse class='hatt' cx="200" cy="50" rx="40" ry="7" fill="black" />
+       <rect class='hatt' x="160" y="50" width="80" height="50" fill="black" />
+       <line class='skjerf' x="160" y="50" width="80" height="50" fill="black" />
+       <rect class='skjerf' x="160" y="50" width="80" height="50" fill="black" />
+       <circle class='knapp' cx="200" cy="250" r="5" fill="black" />  
+       <circle class='knapp' cx="200" cy="290" r="5" fill="black" />  
+       <circle class='knapp' cx="200" cy="330" r="5" fill="black" />  
+
+    </svg> 
+    
+
+</body>
+</html>
+

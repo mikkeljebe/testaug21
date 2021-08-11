@@ -1,6 +1,8 @@
 body    {
     padding: 0;
     margin: 0;
+	background-color: #cecece;
+	/* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
 
 .header {
@@ -11,19 +13,39 @@ body    {
 	margin: 0;
 	position: fixed;
 	top: 0;
-	color: cadetblue;
-	box-shadow: 0px 1px 20px  rgb(95, 130, 131);
+	color: #2a9d8f;
+	box-shadow: 0px 1px 20px #444545;
+	text-align: center;
+}
+
+a {
+	color: #5d5c61;
+	text-decoration: none; 
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+a:link {
+    color: #264653;
+}
+
+
+a:hover {
+    color: #3a6b7e;
+}
+
+a:active {
+    color: #184b60;
 }
 
 h1 {
 	font-size: 2em;
-	color: rgb(2, 66, 69);
+	color: #264653;
 	margin: 1.5rem 1.5rem 1.5rem 20px;
 }
 
 h2 {
-	font-size: 1.2em;
-	color: cadetblue;
+	font-size: 1.5em;
+	color: #264653;
 	margin: 100px 0 0 20px;
 	
 
@@ -31,18 +53,24 @@ h2 {
 
 h3 {
 	font-size: 1em;
-	color: rgb(6, 81, 84);
+	color: #264653;
 	margin: 1rem 1rem 1rem 20px;
+}
+.topul {
+	padding: 20px 0 0 0;
 }
 
 div {
-	background-color: rgb(225, 250, 249);
+	background-color: #a5a3a5;
 	margin: 20px 20px;
 	width: 30%;
 	height: 300px;
-	border: 5px solid cadetblue;
 	float: left;
+	box-shadow: 1px 1px 5px #444545 ;
+	padding: 10px;
+
 }
+
 
 .div2 {
 	float: right;
@@ -75,7 +103,7 @@ div {
 	margin: 0;
 	position: sticky;
 	bottom: 0;
-	color: cadetblue;
+	color: #2a9d8f;
 	
 	box-shadow: 5px 5px 15px  rgb(50, 84, 85);
 }
