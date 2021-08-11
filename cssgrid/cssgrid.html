@@ -61,6 +61,22 @@
             font-weight: 800;
         }
 
+        @media only screen and (max-width: 700px) {
+            div.page {
+                grid-template-columns: 1fr;
+                grid-template-rows: 40px 1fr 2fr 40px;
+                grid-template-areas: 'header' 
+                                 'nav'
+                                 'main'
+                                 'footer';
+            }
+            div.main {
+                margin: 10px;
+            }
+            div.nav {
+                text-align: center;
+            }
+        
 
     </style>
 
