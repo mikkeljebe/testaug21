@@ -2,10 +2,11 @@
 
     body {
         background-color: lightblue;
+        
     }
 
     svg {
-        height: 95vh;
+        height: 98vh;
     }
     .board {
         fill: rgb(235, 192, 140);
