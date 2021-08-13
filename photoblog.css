@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+/* 
+.mainPict {
+    height: 88vh;
+    width: 100vw;
+    background: center/cover url('https://images.unsplash.com/photo-1578393098337-5594cce112da?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmxhY2slMjBhbmQlMjB3aGl0ZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60');
+}
+
+img {
+    width: 30%;
+    margin: calc(10%/6); 
+} */
+
+nav {
+    text-transform: uppercase;
+    width: 100%;
+    margin-left: calc(10%/6.4);
+    padding: 1.2em 0 ;
+    
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+/* .textpåbilde {
+    color: gray;
+    position: absolute;
+  bottom: 8px;
+  left: 16px;
+  text-transform: lowercase;
+}  */
+
+.wrapper {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(8, 22vh);
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.a {
+    grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row-start: 1;
+    grid-row-end: 5;
+}
+
+.b {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 5;
+    grid-row-end: 7;
+    
+}
+.c {
+    grid-column-start: 5;
+    grid-column-end: 8;
+    grid-row-start: 5;
+    grid-row-end: 7;
+}
+
+.d {
+    grid-column-start: 8;
+    grid-column-end: 11;
+    grid-row-start: 5;
+    grid-row-end: 7;
+}
+
+.e {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 7;
+    grid-row-end: 9;
+    
+}
+
+.f {
+    grid-column-start: 5;
+    grid-column-end: 8;
+    grid-row-start: 7;
+    grid-row-end: 9;
+    
+}
+
+.g {
+    grid-column-start: 8;
+    grid-column-end: 10;
+    grid-row-start: 7;
+    grid-row-end: 8;
+    
+}
+
+.h {
+    grid-column-start: 10;
+    grid-column-end: 11;
+    grid-row-start: 7;
+    grid-row-end: 8;
+   
+}
+.i {
+    grid-column-start: 8;
+    grid-column-end: 11;
+    grid-row-start: 8;
+    grid-row-end: 9;
+}
+
+footer {
+    text-transform: lowercase;
+    width: 95%;
+    text-align: right;
+    padding: 1.2em 0 ;
+    
+    font-size: 1em;
+    font-weight: 300;
+}
