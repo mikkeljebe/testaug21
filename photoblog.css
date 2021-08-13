@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
+    
 }
 
 
@@ -18,11 +19,19 @@ nav {
 .textpåbilde {
     color: rgb(240, 240, 240);
     position: absolute;
-  bottom: 20px;
-  left: 45px;
-  text-transform: lowercase;
-  font-size: 1em;
-  font-weight: 300;
+    bottom: 20px;
+    left: 45px;
+    text-transform: lowercase;
+    font-size: 1em;
+    font-weight: 300;
+    transition: 0.5s;
+    
+
+} 
+
+.textpåbilde:hover {
+    bottom: 30px;
+    
 } 
 
 .wrapper {
@@ -36,6 +45,7 @@ img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    
 }
 
 .a {
@@ -43,6 +53,12 @@ img {
     grid-column-end: 11;
     grid-row-start: 1;
     grid-row-end: 5;
+    transition: 0.5s;
+}
+
+.a:hover {
+    filter: brightness(110%);
+    
 }
 
 .b {
@@ -116,3 +132,7 @@ footer {
     margin-top: 15px;
     color: white;
 }
+
+
+
+
