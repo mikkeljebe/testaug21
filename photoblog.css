@@ -3,20 +3,10 @@ body {
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
-/* 
-.mainPict {
-    height: 88vh;
-    width: 100vw;
-    background: center/cover url('https://images.unsplash.com/photo-1578393098337-5594cce112da?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmxhY2slMjBhbmQlMjB3aGl0ZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60');
-}
 
-img {
-    width: 30%;
-    margin: calc(10%/6); 
-} */
 
 nav {
-    text-transform: uppercase;
+    text-transform: lowercase;
     width: 100%;
     margin-left: calc(10%/6.4);
     padding: 1.2em 0 ;
@@ -25,13 +15,15 @@ nav {
     font-weight: 700;
 }
 
-/* .textpåbilde {
-    color: gray;
+.textpåbilde {
+    color: rgb(240, 240, 240);
     position: absolute;
-  bottom: 8px;
-  left: 16px;
+  bottom: 20px;
+  left: 45px;
   text-transform: lowercase;
-}  */
+  font-size: 1em;
+  font-weight: 300;
+} 
 
 .wrapper {
     display: grid;
@@ -114,10 +106,13 @@ img {
 
 footer {
     text-transform: lowercase;
-    width: 95%;
-    text-align: right;
+    width: 100vw;
+    text-align: center;
     padding: 1.2em 0 ;
     
     font-size: 1em;
     font-weight: 300;
+    background-color: #727272;
+    margin-top: 15px;
+    color: white;
 }
