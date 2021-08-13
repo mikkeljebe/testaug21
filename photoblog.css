@@ -25,13 +25,13 @@ nav {
     font-size: 1em;
     font-weight: 300;
     transition: 0.5s;
-    
+
 
 } 
 
 .textpåbilde:hover {
     bottom: 30px;
-    
+    cursor: none;
 } 
 
 .wrapper {
@@ -103,9 +103,12 @@ img {
     grid-column-end: 10;
     grid-row-start: 7;
     grid-row-end: 8;
-    
+    transition: 1s;
 }
 
+.g:hover {
+    filter: brightness(200%) contrast(175%);
+}
 .h {
     grid-column-start: 10;
     grid-column-end: 11;
@@ -121,6 +124,7 @@ img {
 }
 
 footer {
+    
     text-transform: lowercase;
     width: 100vw;
     text-align: center;
@@ -131,8 +135,11 @@ footer {
     background-color: #727272;
     margin-top: 15px;
     color: white;
+    transition: 1s;
 }
 
 
-
-
+.p:hover {
+    color: #727272;
+    cursor: none;
+}
