@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onclick 2 test</title>
+</head>
+<body>
+    <h1>Onclick test quiz</h1>   
+    <h2>Hva er hovedstaden i Bolivia?</h2> 
+    <h3>Trykk på riktig svar:</h3>
+    <h3 id='alt1' onclick="riktig()">Sucre</h3>
+    <h3 id='alt2' onclick="feil()">El Alto</h3>
+    <h3 id='alt3' onclick="feil()">Cochabamba</h3>
+    <h3 id='alt4' onclick="riktig()">La paz</h3>
+
+<Script>
+    function riktig() {
+        document.getElementById('alt1').innerHTML = 'Riktig! Sucre og La Paz er begge hovedsteder i Bolivia'; 
+        document.getElementById('alt2').innerHTML = ''; 
+        document.getElementById('alt3').innerHTML = ''; 
+        document.getElementById('alt4').innerHTML = ''; 
+    }
+
+    function feil() {
+        document.getElementById('alt2').innerHTML = 'Feil.';
+        
+        document.getElementById('alt1').innerHTML = ''; 
+        document.getElementById('alt3').innerHTML = 'Sucre og La Paz er hovedsteder i Bolivia'; 
+        document.getElementById('alt4').innerHTML = ''; 
+    }
+
+   
+
+</Script>
+</body>
+</html>

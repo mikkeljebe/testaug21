@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onclick</title>
+</head>
+<body>
+    <p>Ferdighet 2 - Onclick og kjøre funksjon som endrer innerHTML til element ut fra Id</p>
+    <h2 id='a1'>AAAAAAAAAAAAAAAAAAA</h2>
+    <h2 id='a2'>AAAAAAAAAAAAAAAAAAA</h2>
+    <h2 id='a3'>AAAAAAAAAAAAAAAAAAA</h2>
+    <h2 onclick="gjørnoe()">BBBBBBBBBBBBBBB <-- Trykk på meg.</h2>
+
+    <Script>
+        function gjørnoe() {
+            document.getElementById('a1').innerHTML = 'Mikkel' ;
+            document.getElementById('a2').innerHTML = 'er ' ;
+            document.getElementById('a3').innerHTML = 'kul' ;
+        }
+    </Script>
+
+</body>
+</html>
