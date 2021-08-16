@@ -17,16 +17,19 @@
     <button onclick="lock(this)">8</button>
     <button onclick="lock(this)">9</button>
 
-    <div id="info">Trykk på riktig kombinasjon for å låse opp</div>
+    
+    <div id="info">
+        <p>Trykk på riktig kombinasjon for å låse opp</p>
+    </div>
 
     <script>
-        let textB = 'Du har trykket: ';
+        let textB = '<p>Du har trykket: </p>';
 
         function lock(number) {
             let press = number.innerHTML;
             
             document.getElementById('info').innerHTML =
-                textB += press + ' ';
+               textB += press + ' ';
         }
         
 
