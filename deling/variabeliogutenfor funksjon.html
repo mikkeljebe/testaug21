@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>Ferdighet 4 - Variabel utenfor funksjon og innenfor funksjon, samt sette sammen tekst av flere deler</p>
+    <button onclick="lock(this)">1</button>
+    <button onclick="lock(this)">2</button>
+    <button onclick="lock(this)">3</button>
+    <button onclick="lock(this)">4</button>
+    <button onclick="lock(this)">7</button>
+    <button onclick="lock(this)">8</button>
+    <button onclick="lock(this)">9</button>
+
+    
+    <div id="info">
+        <p>Trykk på riktig kombinasjon for å låse opp</p>
+    </div>
+
+    <script>
+        let textB = '<p>Du har trykket: </p>';
+
+        function lock(number) {
+            let press = number.innerHTML;
+            
+            document.getElementById('info').innerHTML =
+               textB += press + ' ';
+        }
+        
+
+    </script>
+</body>
+</html>
