@@ -23,17 +23,18 @@
     <br>
     <br>
 
-    <label for="borderRadiusSlider">Rammeradius</label>
+    <label for="borderRadiusSlider">Rammeradius:</label>
     <input id="borderRadiusSlider" type="range" min="0" max="250" step="5" value="0" oninput="showDiv()" />
-  
-    <label for="borderChooser">Rammefarge</label>
+    <br>
+    <label for="borderChooser">Rammefarge:</label>
     <select id="borderChooser" onchange="showDiv()">
       <option selected value="black">Svart</option>
       <option value="grey">Grå</option>
       <option value="none">Ingen</option>
     </select> 
 
-
+<br>
+<br>
     <div id="resultat"></div>
     <div id="resultatHtml" style="font-family: monospace"></div>
 
@@ -55,7 +56,6 @@
                 + 'height: ' + sizeSlider.value + 'px;'
                 + 'border: solid 5px ' + borderChooser.value + ';'
                 + 'border-radius: ' + borderRadiusSlider.value + 'px;'
-
                 + '">' 
                 + textInput.value + '</div>';
 
