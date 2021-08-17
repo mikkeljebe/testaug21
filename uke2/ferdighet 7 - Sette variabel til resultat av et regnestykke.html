@@ -9,28 +9,31 @@
     <p>Ferdighet 7 - Sette variabel til resultat av et regnestykke. </p>
    
     <label for="bredde">Velg bredde:</label>
-    <input id="bredde" type="range" min="1" max="1000" step="1" oninput="calculate2()" value="250"/>
+    <input id="bredde" type="range" min="1" max="1000" step="1" oninput="calculate()" value="250"/>
     <br>
     <label for="høyde">Velg høyde:</label>
-    <input id="høyde" type="range" min="1" max="1000" step="1" oninput="calculate2()" value="100"/>
+    <input id="høyde" type="range" min="1" max="1000" step="1" oninput="calculate()" value="100"/>
     <br>
     <br>
     <div id="resultat"></div>
+    <div id="resultatHtml" style="font-family: monospace"></div>
 
   <script>
     let resultatDiv = document.getElementById('resultat');
+    let resultatHtmlDiv = document.getElementById('resultatHtml');
     let breddeInput = document.getElementById('bredde');
     let høydeInput = document.getElementById('høyde');
 
-    calculate2();
+    calculate();
     
-    function calculate2() {
+    function calculate() {
       let bredde = parseInt(breddeInput.value);
       let høyde = parseInt(høydeInput.value);
 
       resultatDiv.innerHTML = 
         `<div style="height: ${høyde}px; width: ${bredde}px; border: solid black 5px;">Bredde * høyde = ${bredde*høyde} <br> 2 * bredde + 2 * høyde = ${2*bredde+2*høyde}</div>`;
 
+      // resultatHtmlDiv.innerText = resultatDiv.innerHTML;
     }
 
    </script>
