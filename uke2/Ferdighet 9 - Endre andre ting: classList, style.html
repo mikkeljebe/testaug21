@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .en {
+      border: brown solid 5px;
+    }
+    .to {
+      border: blue solid 5px;
+    }
+    .tre {
+      border: red solid 5px;
+    }
+    .fire {
+      border: yellow solid 5px;
+    }
+    .fem {
+      border: green solid 5px;
+    }
+    div.en::before {
+      content: "🡆";
+    }
+
+    div.en::after {
+      content: "🡄";
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div id="bla">nla nla nla </div>
+  <input id="che" type="checkbox" onchange="toggleStyle()">
+
+  <div id="bla2">nla nla nla </div>
+  <input id="che" type="checkbox" onchange="toggleStyle()">
+
+
+  <script>
+    function toggleStyle() {
+      let isChecked = document.getElementById('che').checked;
+      document.getElementById("bla").classList.toggle('en', isChecked);
+      
+
+    }
+
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p onclick="calculate()">Ferdighet 8 - tilfeldige tall - trykk på meg</p>
+    
+    <div id="resultat"></div>
+    <div id="resultatHtml" style="font-family: monospace"></div>
+
+  <script>
+    let resultatDiv = document.getElementById('resultat');
+    let resultatHtmlDiv = document.getElementById('resultatHtml');
+
+
+    calculate();
+    
+    function calculate() {
+      let tilfeldigBredde = 200 + Math.floor(Math.random()*300);
+      let tilfeldigHøyde = 50 + Math.floor(Math.random()*450);
+      let tilfeldigBorder = 1 + Math.floor(Math.random()*5);
+
+
+      resultatDiv.innerHTML = 
+        `<div style="height: ${tilfeldigHøyde}px; width: ${tilfeldigBredde}px; border: solid black ${tilfeldigBorder}px;">
+          Bredde = ${tilfeldigBredde} 
+          <br>
+          Høyde = ${tilfeldigHøyde}
+          <br>
+          Ramme = ${tilfeldigBorder}
+          </div>`;
+
+      // resultatHtmlDiv.innerText = resultatDiv.innerHTML;
+    }
+
+   </script>
+   
+</body>
+</html>
