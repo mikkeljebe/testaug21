@@ -29,6 +29,7 @@
     function calculate() {
       let bredde = parseInt(breddeInput.value);
       let høyde = parseInt(høydeInput.value);
+      // let tilfeldigTall = 50 + Math.floor(Math.random()*500);
 
       resultatDiv.innerHTML = 
         `<div style="height: ${høyde}px; width: ${bredde}px; border: solid black 5px;">Bredde * høyde = ${bredde*høyde} <br> 2 * bredde + 2 * høyde = ${2*bredde+2*høyde}</div>`;
