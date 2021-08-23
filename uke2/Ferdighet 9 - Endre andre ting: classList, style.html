@@ -6,26 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .en {
+    .selected.en {
       border: brown solid 5px;
     }
-    .to {
-      border: blue solid 5px;
+    .selected.to {
+      background-color: blue;
     }
-    .tre {
-      border: red solid 5px;
+    .selected.tre {
+      padding: 10px;
     }
-    .fire {
-      border: yellow solid 5px;
+    .selected.fire {
+      color: yellow;
     }
-    .fem {
-      border: green solid 5px;
+    .selected.fem {
+      margin: 30px;
     }
-    div.en::before {
+    div.selected::before {
       content: "🡆";
     }
-
-    div.en::after {
+    div.selected::after {
       content: "🡄";
     }
 
@@ -33,24 +32,81 @@
   </style>
 </head>
 <body>
+  
+    <div id="div1" class="en" onclick="velg(this)">Div en</div>
+    <div id="div2" onclick="velg(this)">Div to</div>
 
-  <div id="bla">nla nla nla </div>
-  <input id="che" type="checkbox" onchange="toggleStyle()">
+    <label for="chk1">Brun ramme</label>
+    <input id="chk1" type="checkbox" onchange="toggleStyle()"/><br>
+    <label for="chk2">Blå bakgrunn</label>
+    <input id="chk2" type="checkbox" onchange="toggleStyle()"/><br>
+    <label for="chk3">Padding</label>
+    <input id="chk3" type="checkbox" onchange="toggleStyle()"/><br>
+    <label for="chk4">Color</label>
+    <input id="chk4" type="checkbox" onchange="toggleStyle()"/><br>
+    <label for="chk5">Grønn ramme</label>
+    <input id="chk5" type="checkbox" onchange="toggleStyle()"/><br>
+    
+    <script>
+      toggleStyle();
+      
+        function toggleStyle() {
+            var isChecked1 = document.getElementById('chk1').checked;
+            var isChecked2 = document.getElementById('chk2').checked;
+            var isChecked3 = document.getElementById('chk3').checked;
+            var isChecked4 = document.getElementById('chk4').checked;
+            var isChecked5 = document.getElementById('chk5').checked;
+            // let valgt = document.getElementsByClassName('selected');
+            
+            // console.log(valgt);
+            // valgt.classList.toggle('en', isChecked1);
+            
+            // document.getElementById('div1').classList.contains('selected');
+            document.getElementById('div1').classList.toggle('en', isChecked1);
+            document.getElementById('div1').classList.toggle('to', isChecked2);
+            document.getElementById('div1').classList.toggle('tre', isChecked3);
+            document.getElementById('div1').classList.toggle('fire', isChecked4);
+            document.getElementById('div1').classList.toggle('fem', isChecked5);
+            
+            document.getElementById('div2').classList.toggle('en', isChecked1);
+            document.getElementById('div2').classList.toggle('to', isChecked2);
+            document.getElementById('div2').classList.toggle('tre', isChecked3);
+            document.getElementById('div2').classList.toggle('fire', isChecked4);
+            document.getElementById('div2').classList.toggle('fem', isChecked5);
+            
+        }
 
-  <div id="bla2">nla nla nla </div>
-  <input id="che" type="checkbox" onchange="toggleStyle()">
+        function velg(element) {
+          
+          element.classList.toggle('selected');
+          document.getElementById('chk1').checked = element.classList.contains('en');
+          document.getElementById('chk2').checked = element.classList.contains('to');
+          document.getElementById('chk3').checked = element.classList.contains('tre');
+          document.getElementById('chk4').checked = element.classList.contains('fire');
+          document.getElementById('chk5').checked = element.classList.contains('fem');
+          // // toggleStyle();
+      
+        }
+        
+    </script>
+  
+  <!-- <input id="che" type="checkbox" onchange="toggleStyle()">
+  <div id="div1">nla nla nla </div>
 
+  <input id="che2" type="checkbox" onchange="toggleStyle2()">
+  <div id="div1">nla nla nla </div>
 
   <script>
     function toggleStyle() {
       let isChecked = document.getElementById('che').checked;
-      document.getElementById("bla").classList.toggle('en', isChecked);
-      
-
+      document.getElementById("div1").classList.toggle('en', isChecked);
     }
 
+    function toggleStyle2() {
+      let isChecked = document.getElementById('che2').checked;
+      document.getElementById("div1").classList.toggle('to', isChecked);
+    } -->
 
-  </script>
   
 </body>
 </html>
