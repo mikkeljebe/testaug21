@@ -13,8 +13,8 @@
   #brett {
     width: 600px;
     height: 600px;
-    background-color: rgb(65, 153, 230);
-    border: rgb(78, 56, 56) 5px outset;
+    /* background-color: rgb(134, 86, 64); */
+    border: rgb(78, 56, 56) 40px outset;
     /* box-sizing: border-box; */
     margin-left: 750px;
     margin-top:50px;
@@ -26,10 +26,10 @@
     background-color: rgb(130, 196, 130);
     /* margin:auto; */
     position: absolute;
-    border: rgba(63, 62, 62, 0.993) inset 10px;
-    
+    border: rgba(90, 61, 33, 0.993) inset 20px;
     
   }
+  
   .enkeltBrikkeUtenfor {
     width: 200px;
     height: 200px;
@@ -39,21 +39,42 @@
     margin:8px;
     
   }
+  
+  .skjult {
+    display:none;
+  }
+
+  .clickHighlight{
+      outline: rgb(65, 65, 65) solid 3px;
+  }
+
+  /* .hoverHighlight {
+    outline: rgb(177, 177, 177) solid 3px;
+  } */
+
+  
   div.sub {
     width: 200px;
     height: 200px;
-    background-color: lavender;
+    /* background-color: srgb(146, 128, 128); */
     float: left;
-    outline:rgb(185, 185, 236) 1px solid;
+    outline:rgb(0, 0, 0) 1px solid;
     /* margin: 1px; */
   }
 
   img {
     width:200px;
     height:200px;
-  
-    /* object-fit: cover; */
+    
   }
+
+  #brikkerUtenfor img:hover {
+    opacity: 0.5;
+    /* box-shadow: -6px 3px 4px -30px #000000; */
+    /* border: 3px solid rgb(209, 209, 209); */
+  }
+ 
+  
 </style>
   
 </head>
@@ -64,46 +85,70 @@
 <!-- <section id='app'></section> -->
 
 <div id="brikkerUtenfor">
-  <div id="r1k1" class="enkeltBrikkeUtenfor" onclick="velgBilde(this.innerHTML)"><img src="1.jpg"></div>
-  <div id="r1k2" class="enkeltBrikkeUtenfor"><img src="2.jpg"></div>
-  <div id="r1k3" class="enkeltBrikkeUtenfor"><img src="3.jpg"></div>
-  <div id="r2k1" class="enkeltBrikkeUtenfor"><img src="4.jpg"></div>
-  <div id="r2k2" class="enkeltBrikkeUtenfor"><img src="5.jpg"></div>
-  <div id="r2k3" class="enkeltBrikkeUtenfor"><img src="6.jpg"></div>
-  <div id="r3k1" class="enkeltBrikkeUtenfor"><img src="7.jpg"></div>
-  <div id="r3k2" class="enkeltBrikkeUtenfor"><img src="8.jpg"></div>
-  <div id="r3k3" class="enkeltBrikkeUtenfor"><img src="9.jpg"></div>
+  <div id="r1k1" class="enkeltBrikkeUtenfor" onclick="velgBilde(this), plukketBrikke = 'r1k1'"><img src="1.jpg"></div>
+  <div id="r1k2" class="enkeltBrikkeUtenfor" onclick="velgBilde(this), plukketBrikke = 'r1k2'"><img src="2.jpg"></div>
+  <div id="r1k3" class="enkeltBrikkeUtenfor" onclick="velgBilde(this), plukketBrikke = 'r1k3'"><img src="3.jpg"></div>
+  <div id="r2k1" class="enkeltBrikkeUtenfor" onclick="velgBilde(this), plukketBrikke = 'r2k1'"><img src="6.jpg"></div>
+  <div id="r2k2" class="enkeltBrikkeUtenfor" onclick="velgBilde(this), plukketBrikke = 'r2k2'"><img src="5.jpg"></div>
+  <div id="r2k3" class="enkeltBrikkeUtenfor" onclick="velgBilde(this), plukketBrikke = 'r2k3'"><img src="4.jpg"></div>
+  <div id="r3k1" class="enkeltBrikkeUtenfor" onclick="velgBilde(this), plukketBrikke = 'r3k1'"><img src="7.jpg"></div>
+  <div id="r3k2" class="enkeltBrikkeUtenfor" onclick="velgBilde(this), plukketBrikke = 'r3k2'"><img src="8.jpg"></div>
+  <div id="r3k3" class="enkeltBrikkeUtenfor" onclick="velgBilde(this), plukketBrikke = 'r3k3'"><img src="9.jpg"></div>
 </div>
 
 <div id="brett">
   <div id="R1K1ON" class="sub" onclick="limInn(this)"></div>
-  <div id="R1K2ON" class="sub">2</div>
-  <div id="R1K3ON" class="sub">3</div>
-  <div id="R2K1ON" class="sub">4</div>
-  <div id="R2K2ON" class="sub">5</div>
-  <div id="R2K3ON" class="sub">6</div>
-  <div id="R3K1ON" class="sub">7</div>
-  <div id="R3K2ON" class="sub">8</div>
-  <div id="R3K3ON" class="sub">9</div>
+  <div id="R1K2ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R1K3ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R2K1ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R2K2ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R2K3ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R3K1ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R3K2ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R3K3ON" class="sub" onclick="limInn(this)"></div>
 </div>
-
 
 
 
 
 <script>
-  
-  function limInn(x){
-    x.innerHTML = grab;
-    console.log();
-  }
-
+  let plukketBrikke = '';
+  let winCondition ='0';
   let grab = '';
 
-  function velgBilde(x) {
-    grab = x;
+  function limInn(x){
+    x.innerHTML = grab;
+    let element = document.getElementById(`${plukketBrikke}`);
+    element.classList.add('skjult');
+
+
+    if   (document.getElementById('R1K1ON').innerHTML.includes('9.jpg') 
+       && document.getElementById('R1K2ON').innerHTML.includes('8.jpg') 
+       && document.getElementById('R1K3ON').innerHTML.includes('7.jpg')
+       && document.getElementById('R2K1ON').innerHTML.includes('6.jpg')
+       && document.getElementById('R2K2ON').innerHTML.includes('5.jpg')
+       && document.getElementById('R2K3ON').innerHTML.includes('4.jpg')
+       && document.getElementById('R3K1ON').innerHTML.includes('3.jpg')
+       && document.getElementById('R3K2ON').innerHTML.includes('2.jpg')
+       && document.getElementById('R3K3ON').innerHTML.includes('1.jpg'))  
+       {
+      winCondition = '1';
+      }
   }
 
+ if (winCondition == '1') {
+   alert ('test');
+ }
+  function velgBilde(x) {
+    grab = x.innerHTML;
+    x.classList.toggle('clickHighlight');
+    
+    
+  }
+
+  // function hover(x) {
+  //   x.classList.add('hoverHighlight');
+  // }
 </script> 
 <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Test-Logo.svg" draggable= "true"> -->
 

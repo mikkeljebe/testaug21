@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzzle</title>
+<style>
+  body{
+    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/53554260151341.5a3e34830d41b.jpg);
+  
+  }
+  #brett {
+    width: 600px;
+    height: 600px;
+    background-color: rgb(65, 153, 230);
+    border: rgb(78, 56, 56) 5px outset;
+    /* box-sizing: border-box; */
+    margin-left: 750px;
+    margin-top:50px;
+    
+  }
+  #brikkerUtenfor{
+    width: 650px;
+    height: 800px;
+    background-color: rgb(130, 196, 130);
+    /* margin:auto; */
+    position: absolute;
+    border: rgba(63, 62, 62, 0.993) inset 10px;
+    
+    
+  }
+  .enkeltBrikkeUtenfor {
+    width: 200px;
+    height: 200px;
+    /* background-color: rgb(225, 188, 241); */
+    float: left;
+    /* outline:rgb(185, 185, 236) 1px solid; */
+    margin:8px;
+    
+  }
+  
+  .skjult {
+    display:none;
+  }
+
+  .clickHighlight{
+      outline: rgb(255, 0, 0) solid 3px;
+  }
+
+  .hoverHighlight {
+    outline: rgb(177, 177, 177) solid 3px;
+  }
+  
+  div.sub {
+    width: 200px;
+    height: 200px;
+    background-color: lavender;
+    float: left;
+    outline:rgb(185, 185, 236) 1px solid;
+    /* margin: 1px; */
+  }
+
+  img {
+    width:200px;
+    height:200px;
+  
+    /* object-fit: cover; */
+  }
+</style>
+  
+</head>
+<body>
+  
+
+  
+<!-- <section id='app'></section> -->
+
+<div id="brikkerUtenfor">
+  <div id="r1k1" class="enkeltBrikkeUtenfor" onclick="velgBilde(this.innerHTML), plukketBrikke = 'r1k1'">r3k3<img src="1.jpg"></div>
+  <div id="r1k2" class="enkeltBrikkeUtenfor" onclick="velgBilde(this.innerHTML), plukketBrikke = 'r1k2'">r3k2<img src="2.jpg"></div>
+  <div id="r1k3" class="enkeltBrikkeUtenfor" onclick="velgBilde(this.innerHTML), plukketBrikke = 'r1k3'">r3k1<img src="3.jpg"></div>
+  <div id="r2k1" class="enkeltBrikkeUtenfor" onclick="velgBilde(this.innerHTML), plukketBrikke = 'r2k1'">r2k1<img src="4.jpg"></div>
+  <div id="r2k2" class="enkeltBrikkeUtenfor" onclick="velgBilde(this.innerHTML), plukketBrikke = 'r2k2'">r2k2<img src="5.jpg"></div>
+  <div id="r2k3" class="enkeltBrikkeUtenfor" onclick="velgBilde(this.innerHTML), plukketBrikke = 'r2k3'">r2k3<img src="6.jpg"></div>
+  <div id="r3k1" class="enkeltBrikkeUtenfor" onclick="velgBilde(this.innerHTML), plukketBrikke = 'r3k1'">r1k3<img src="7.jpg"></div>
+  <div id="r3k2" class="enkeltBrikkeUtenfor" onclick="velgBilde(this.innerHTML), plukketBrikke = 'r3k2'">r1k2<img src="8.jpg"></div>
+  <div id="r3k3" class="enkeltBrikkeUtenfor" onclick="velgBilde(this.innerHTML), plukketBrikke = 'r3k3'">r1k1<img src="9.jpg"></div>
+</div>
+
+<div id="brett">
+  <div id="R1K1ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R1K2ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R1K3ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R2K1ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R2K2ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R2K3ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R3K1ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R3K2ON" class="sub" onclick="limInn(this)"></div>
+  <div id="R3K3ON" class="sub" onclick="limInn(this)"></div>
+</div>
+
+
+
+<!-- == "<img src='1.jpg'>" -->
+
+<script>
+  let plukketBrikke = '';
+  
+
+
+  function limInn(x){
+    x.innerHTML = grab;
+    document.getElementById(`${plukketBrikke}`).classList.add("skjult"); 
+    console.log(plukketBrikke)
+    // document.getElementById(x).style.display= "none";
+    // grab = '';
+    if (document.getElementById('R1K1ON').innerHTML.includes('9.jpg') 
+     && document.getElementById('R1K2ON').innerHTML.includes('8.jpg') 
+     && document.getElementById('R1K3ON').innerHTML.includes('7.jpg')
+     && document.getElementById('R2K1ON').innerHTML.includes('4.jpg')
+     && document.getElementById('R2K2ON').innerHTML.includes('5.jpg')
+     && document.getElementById('R2K3ON').innerHTML.includes('6.jpg')
+     && document.getElementById('R3K1ON').innerHTML.includes('3.jpg')
+     && document.getElementById('R3K2ON').innerHTML.includes('2.jpg')
+     && document.getElementById('R3K1ON').innerHTML.includes('1.jpg'))  {
+       alert('test'); 
+       console.log('test');
+      }
+  }
+
+  let grab = '';
+
+  function velgBilde(x) {
+    grab = x;
+    // this.classList.add('clickHighlight');
+    
+  }
+</script> 
+<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Test-Logo.svg" draggable= "true"> -->
+
+
+</body>
+</html>
