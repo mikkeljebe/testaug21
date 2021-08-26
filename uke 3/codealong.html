@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div id='app'></div>
+
+  <script>
+    //model
+    let display ='';
+
+    //view
+    show();
+    function show(){
+      document.getElementById('app').innerHTML = `
+     
+      <div>${display}</div>
+      <button onclick='calc(this.innerHTML)'>1</button>
+      <button onclick='calc(this.innerHTML)'>2</button>
+      <button onclick='calc(this.innerHTML)'>3</button>
+      <button onclick='kalkuler(this.innerHTML)'>+</button>
+      <br>
+      <button onclick='calc(this.innerHTML)'>4</button>
+      <button onclick='calc(this.innerHTML)'>5</button>
+      <button onclick='calc(this.innerHTML)'>6</button><br>
+      <button onclick='calc(this.innerHTML)'>7</button>
+      <button onclick='calc(this.innerHTML)'>8</button>
+      <button onclick='calc(this.innerHTML)'>9</button>
+      `;
+     
+   
+    }
+    
+    //controller
+  function calc(clicked){
+      display += clicked;
+      show();
+  }
+
+  function kalkuler(){
+    let calculation = display.replace('×', '*').replace('÷', '/');
+      display = eval(calculation);
+
+  }
+
+  
+
+  </script>
+  
+</body>
+</html>

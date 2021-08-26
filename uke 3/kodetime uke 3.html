@@ -25,17 +25,16 @@
   let botInput = '';
   let botSvar = '';
 
-  const app = document.getElementById('app');
 
   //view
   show();
 function show() {
-  let html = `
+  document.getElementById('app').innerHTML = `
   <div>${botSvar}</div>
     <input type="text" onchange='botInput = this.value, getUserInput()'> : Chatbot</input>
     `;
 
-  app.innerHTML = html;
+  
 }
 
   //controller

@@ -17,11 +17,25 @@
 
     <script>
         // model
-        var points = 0;
-        var pointsPerClick = 1;
-        var smileyIndex = 0;
+        let points = 0;
+        let pointsPerClick = 1;
+        let smileyIndex = 0;
         let jukset = 0;
-        
+
+        // view
+        updateView();
+        function updateView() {
+            let smiley = smileyIndex == 0 ? '😀' : '😁';
+            document.getElementById('app').innerHTML = `
+                <div id="image" onclick="doClick()">${smiley}</div>
+                <div id="pointsInfo">${points}</div>
+                <button onclick="buyUpgrade()">Kjøp oppgradering (10 poeng)</button>
+                <button onclick="juks()">juks</button>
+            `;
+            if (jukset > 0) {
+              document.getElementById('app').innerHTML += "<br>Du har jukset";
+            }
+        }
 
         // controller
         function doClick() {
@@ -43,21 +57,6 @@
           updateView();
         }
 
-        // view
-        updateView();
-        function updateView() {
-            var smiley = smileyIndex == 0 ? '😀' : '😁';
-            document.getElementById('app').innerHTML = `
-                <div id="image" onclick="doClick()">${smiley}</div>
-                <div id="pointsInfo">${points}</div>
-                <button onclick="buyUpgrade()">Kjøp oppgradering (10 poeng)</button>
-                <button onclick="juks()">juks</button>
-            `;
-            if (jukset > 0) {
-              document.getElementById('app').innerHTML += "<br>Du har jukset";
-            }
-            
-        }
     </script>
 </body>
 

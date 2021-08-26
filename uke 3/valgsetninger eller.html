@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #farge {
+      position: relative;
+      height: 50vh;
+      width: 70vw;
+      text-align: center;
+      font-size: 300px;
+      margin: 30px;
+      padding-top: 10px;
+      border: solid grey 4px;
+      border-radius: 5px;
+
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  
+  <Script>
+  //model
+  let bakgrunnsFarge = '';
+  let forgrunnsFarge = '';
+
+  //view
+  show();
+  function show(){
+    document.getElementById('app').innerHTML = `
+    <p>Velg en bakgrunnsfarge:</p>
+  <select name="farger" id="fargevalg" onchange='velgFarge(this.value)'>
+    <option  value="black">Svart</option>
+    <option  value="darkblue">Mørk blå</option>
+    <option  value="lightgrey">Lys grå</option>
+    <option  value="lightgreen">Lys grønn</option>
+    <option  value="rgb(249, 142, 142)">Lys rød</option>
+  </select>
+
+  <div id='farge' style="background-color:${bakgrunnsFarge}; color:${forgrunnsFarge}">A</div>
+  
+
+    `;
+    if (bakgrunnsFarge.length > 2) {
+      document.getElementById('app').innerHTML += `<div>Du har valgt "${bakgrunnsFarge}" bakgrunn.</div>`;
+    }
+  }
+
+  //controller
+
+  function velgFarge(x){
+      bakgrunnsFarge = x;
+      if (bakgrunnsFarge == 'black' || bakgrunnsFarge == 'darkblue') {
+        forgrunnsFarge = 'white';
+      } else {
+        forgrunnsFarge = 'black';
+      }
+     
+      show();
+  }
+
+</Script>
+</body>
+</html>
