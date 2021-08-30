@@ -13,9 +13,7 @@
   #brett {
     width: 600px;
     height: 600px;
-    /* background-color: rgb(134, 86, 64); */
     border: rgb(78, 56, 56) 40px outset;
-    /* box-sizing: border-box; */
     margin-left: 750px;
     margin-top:50px;
     
@@ -24,7 +22,6 @@
     width: 650px;
     height: 800px;
     background-color: rgb(130, 196, 130);
-    /* margin:auto; */
     position: absolute;
     border: rgba(90, 61, 33, 0.993) inset 20px;
     padding: 4px;
@@ -34,49 +31,36 @@
   .enkeltBrikkeUtenfor {
     width: 200px;
     height: 200px;
-    /* background-color: rgb(225, 188, 241); */
     float: left;
-    /* outline:rgb(185, 185, 236) 1px solid; */
     margin:8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
   }
-  .markering{
-      /* outline: rgb(182, 182, 182) solid 10px; */
-      /* opacity: 0.5; */
+  .markering {
       filter: saturate(1);
       box-shadow:  0px 4px 33px 16px #000000;
-      
   }
 
   .skjult {
     opacity: 0;
   }
 
-  /* .hoverHighlight {
-    outline: rgb(177, 177, 177) solid 3px;
-  } */
-
   div.sub {
     width: 200px;
     height: 200px;
-    /* background-color: srgb(146, 128, 128); */
     float: left;
     outline:rgb(0, 0, 0) 1px solid;
-    /* margin: 1px; */
   }
 
   img {
     width:200px;
     height:200px;
-    
   }
 
   #brikkerUtenfor img:hover {
     opacity: 0.5;
-    /* box-shadow: -6px 3px 4px -30px #000000; */
-    /* border: 3px solid rgb(209, 209, 209); */
   }
+  
 </style> 
 </head>
 
@@ -315,9 +299,6 @@
         updateView();
     }
 
-    function ikkeSkjul(tall){
-      flyttedeDiver.replace(tall, '');
-    }
 
   </script> 
 
