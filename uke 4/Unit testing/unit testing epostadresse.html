@@ -20,6 +20,12 @@
             assert.equal(actual, expected);
         });
 
+        QUnit.test("med punktummer", function (assert) {
+            const actual = isMail('mikkel.@mi.kkel');
+            const expected = true;
+            assert.equal(actual, expected);
+        });
+
 
     </script>
 </body>

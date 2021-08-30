@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.16.0.css">
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.16.0.js"></script>
+  <script src="controller.js"></script>
+
+<script>
+  
+
+//model
+let winCondition = false;
+let valgtImg;
+let css1 = '';
+let fjerneDiv = '';
+let nummer;
+
+
+//view
+function updateView() {
+ 
+}
+
+
+//controller
+  
+    QUnit.test('oppdatere css1 med markering', function(assert) {
+      nummer ='4';
+      css1 = 'skjuliyuhit';
+
+      velgBilde();
+
+      assert.equal(css1,'');
+    });
+
+
+  
+</script>
+</body>
+
