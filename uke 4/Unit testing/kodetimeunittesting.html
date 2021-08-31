@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Test Suite</title>
+<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.16.0.css">
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="https://code.jquery.com/qunit/qunit-2.16.0.js"></script>
+  <script src=""></script>
+
+<script>
+  //dummymodel
+  let liste = [1,2,3,4,5,6];
+  let objekt = {navn: 'Mikkel'} 
+  function validLength(date) {
+    return date.length == 10
+  }
+
+//dummyview
+
+
+
+  QUnit.module('add', function() {
+    QUnit.test('should add two numbers', function(assert) {
+      const data = liste; 
+      const detjegtror = [1,2,3,4,5,6];
+
+      assert.deepEqual(data, detjegtror, 'Data er: ' + data);
+      
+    });
+  });
+
+  QUnit.module('add', function() {
+    QUnit.test('should add two numbers', function(assert) {
+      const data = objekt; 
+      const detjegtror = {navn: 'Mikkel'};
+
+      assert.deepEqual(data, detjegtror, 'Data er: ' + data);
+      
+    });
+  });
+</script>
+</body>
+
