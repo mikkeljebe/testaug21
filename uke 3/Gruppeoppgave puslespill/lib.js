@@ -161,7 +161,6 @@ function velgBilde(nummer, div) {
 }
 
 
-
 function limInn(nummer) {
 	if (nummer == '1') {
 		div1HTML == '' ? (div1HTML = valgtImg) : (fjerneDiv = '');
@@ -198,8 +197,6 @@ function limInn(nummer) {
   testWin();
 	updateView();
 }
-
-
 
 
 function leggeTilSkjultCssKlasse(){
