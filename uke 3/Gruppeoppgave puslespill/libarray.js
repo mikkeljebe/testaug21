@@ -43,15 +43,15 @@ function updateView() {
 </div>
 
 <div id="brett">
-  <div id="R1K1ON" class="sub" onclick="limInn(1)">${divPåBrett[1] || ''}</div>
-  <div id="R1K2ON" class="sub" onclick="limInn(2)">${divPåBrett[2] || ''}</div>
-  <div id="R1K3ON" class="sub" onclick="limInn(3)">${divPåBrett[3] || ''}</div>
-  <div id="R2K1ON" class="sub" onclick="limInn(4)">${divPåBrett[4] || ''}</div>
-  <div id="R2K2ON" class="sub" onclick="limInn(5)">${divPåBrett[5] || ''}</div>
-  <div id="R2K3ON" class="sub" onclick="limInn(6)">${divPåBrett[6] || ''}</div>
-  <div id="R3K1ON" class="sub" onclick="limInn(7)">${divPåBrett[7] || ''}</div>
-  <div id="R3K2ON" class="sub" onclick="limInn(8)">${divPåBrett[8] || ''}</div>
-  <div id="R3K3ON" class="sub" onclick="limInn(9)">${divPåBrett[9] || ''}</div>
+  <div id="R1K1ON" class="sub" onclick="limInn(1)">${divPåBrett[1]}</div>
+  <div id="R1K2ON" class="sub" onclick="limInn(2)">${divPåBrett[2]}</div>
+  <div id="R1K3ON" class="sub" onclick="limInn(3)">${divPåBrett[3]}</div>
+  <div id="R2K1ON" class="sub" onclick="limInn(4)">${divPåBrett[4]}</div>
+  <div id="R2K2ON" class="sub" onclick="limInn(5)">${divPåBrett[5]}</div>
+  <div id="R2K3ON" class="sub" onclick="limInn(6)">${divPåBrett[6]}</div>
+  <div id="R3K1ON" class="sub" onclick="limInn(7)">${divPåBrett[7]}</div>
+  <div id="R3K2ON" class="sub" onclick="limInn(8)">${divPåBrett[8]}</div>
+  <div id="R3K3ON" class="sub" onclick="limInn(9)">${divPåBrett[9]}</div>
 </div>
 `;
 }
