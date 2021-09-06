@@ -29,9 +29,9 @@ let css = ['','','','','','','','','',''];
 updateView();
 function updateView() {
 	document.getElementById("app").innerHTML = `
-
-<div id="brikkerUtenfor">
-  <div class="enkeltBrikkeUtenfor ${css[1]}" onclick="velgBilde(1, this) ">${img[1]}</div>
+	
+	<div id="brikkerUtenfor">
+	<div class="enkeltBrikkeUtenfor ${css[1]}" onclick="velgBilde(1, this) ">${img[1]}</div>
   <div class="enkeltBrikkeUtenfor ${css[2]}" onclick="velgBilde(2, this) ">${img[2]}</div>
   <div class="enkeltBrikkeUtenfor ${css[3]}" onclick="velgBilde(3, this) ">${img[3]}</div>
   <div class="enkeltBrikkeUtenfor ${css[4]}" onclick="velgBilde(4, this) ">${img[4]}</div>
@@ -64,7 +64,9 @@ function velgBilde(nummer, div) {
 	velgeNummer = nummer;
 	
 	css = ['','','','','','','','','',''];
+	if (img[nummer] !== '') { 
 	css[nummer] += 'markering';
+}
 	
 	updateView();
 }

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Tre på rad</title>
+    <style type="text/css">
+        div {
+            color: green;
+            background-color: lightgray;
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 2px;
+            font-size: 500%;
+            font-family: helvetica;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        div.first {
+                clear: left;
+        }
+
+        aside {
+          background-color: rgb(245, 245, 245);
+            width: 200px;
+            height: 298px;
+            display: inline-block;
+            margin: 2px;
+            padding: 5px;
+            text-align: center;
+            top: 100px;
+        }
+
+        /* button {
+           display:inline-block;
+           padding:0.35em 1.2em;
+           border:4px solid #7c4242;
+           margin:0 0.3em 0.3em 0;
+           border-radius:0.12em;
+           box-sizing: border-box;
+           text-decoration:none;
+           font-family:'Roboto',sans-serif;
+           font-weight:300;
+           color:#FFFFFF;
+           text-align:center;
+           transition: all 0.2s;
+          }
+
+          #button:hover{
+           color:#000000;
+           background-color:#FFFFFF;
+          } */
+    </style>
+</head>
+<body>
+
+  <main id='app'></main>
+  <script>
+    //model
+    let board = ['','','', '','','', '','','' ]; 
+    let harJegVunnet = '';
+    let vinnerTekst ='';
+
+    //view
+  showBoard();
+  function showBoard() {
+  document.getElementById('app').innerHTML = `
+    <div onclick="setX(1, 0)" class="first">${board[0]}</div>
+    <div onclick="setX(2, 1)">${board[1]}</div>
+    <div onclick="setX(3, 2)">${board[2]}</div>
+
+    <div onclick="setX(4, 3)" class="first">${board[3]}</div>
+    <div onclick="setX(5, 4)">${board[4]}</div>
+    <div onclick="setX(6, 5)">${board[5]}</div>
+
+    <div onclick="setX(7, 6)" class="first">${board[6]}</div>
+    <div onclick="setX(8, 7)">${board[7]}</div>
+    <div onclick="setX(9, 8)">${board[8]}</div>
+
+    <aside>
+      <button id="knapp" onclick="restart()">Prøv igjen</button>
+      <br>
+      <br>${vinnerTekst}
+    </aside>
+    
+    `;
+ 
+  }
+    //controller
+  
+    // <!--
+    // 1. Grunnleggende HTML
+    // 2. Kjøre Javascript-kommandoer ved klikk på noe på websiden
+    // 3. Hente ut element i Javascript - "this" eller via id
+    // 4. Endre HTML til et element vha. Javascript.
+    // -->
+   
+        function setX(divIndex, boardIndex) {
+          if (harJegVunnet == 'x' || harJegVunnet == 'o') {
+            return
+          }
+            if (board[boardIndex] == '') {
+                board[boardIndex] = 'x';
+            }
+            checkWinning();
+            setRandom();
+            vin();
+            showBoard();
+          
+          }
+
+        function setRandom() {
+            let blankRuteIndex = Array.from(board.keys()).filter(i=>board[i]==='');
+            let tilfeldigBlankIndex = blankRuteIndex[Math.floor(Math.random() * blankRuteIndex.length)];
+            board[tilfeldigBlankIndex] = 'o';
+            checkWinning();
+            showBoard();
+        }
+
+        function checkWinning(){
+            return sjekkEnMulighet(0,1,2) ||
+            sjekkEnMulighet(3,4,5) ||
+            sjekkEnMulighet(6,7,8) ||
+
+            sjekkEnMulighet(0,3,6) ||
+            sjekkEnMulighet(1,4,7) ||
+            sjekkEnMulighet(2,5,8) ||
+            sjekkEnMulighet(0,4,8) ||
+            sjekkEnMulighet(2,4,6);
+          
+
+            function sjekkEnMulighet(index1, index2, index3) {
+              if (board[index1] == 'x' && board[index1] == board[index2] && board[index1] == board[index3]) {
+                harJegVunnet = 'x';
+              } else if (board[index1] == 'o' && board[index1] == board[index2] && board[index1] == board[index3]) {
+                harJegVunnet = 'o';
+              } 
+            
+            }
+        }
+
+      function vin(){
+        if (harJegVunnet == 'x'){
+              vinnerTekst += `X har vunnet!!`;
+            } else if (harJegVunnet == 'o'){
+              vinnerTekst += `O har vunnet!!`;
+          }
+      }
+
+      function restart(){
+        board = ['','','', '','','', '','','' ];
+        harJegVunnet = '';
+        vinnerTekst = '';
+        showBoard();
+        
+      }
+
+    </script>
+</body>
+</html>
