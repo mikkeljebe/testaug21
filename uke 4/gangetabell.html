@@ -25,33 +25,33 @@
             4, 8, 12, 16, 20,
             5, 10, 15, 20, 25
         ];
-
+        
         // view
         show();
         function show() {
-            let html = '';
-            for (let i = 0; i < multiplicationMatrix.length; i++) {
-                let number = multiplicationMatrix[i];
-                html += `<div>${number}</div>`;
-            }
-            multiplicationMatrixDiv.innerHTML = html;
-            teller .innerHTML = `Tall valgt: ${columnCount} <hr>`
-            multiplicationMatrixDiv.style.display = 'grid';
-            multiplicationMatrixDiv.style.gridTemplateColumns = `repeat(${columnCount},40px)`;
-        }
+          let html = '';
+          for (let i = 0; i < multiplicationMatrix.length; i++) {
+            let number = multiplicationMatrix[i];
+            html += `<div>${number}</div>`;
+          }
+          multiplicationMatrixDiv.innerHTML = html;
+          teller .innerHTML = `Tall valgt: ${columnCount} <hr>`
+          multiplicationMatrixDiv.style.display = 'grid';
+          multiplicationMatrixDiv.style.gridTemplateColumns = `repeat(${columnCount},40px)`;
+          }
 
         function slider(x){
 
-columnCount = x;
-multiplicationMatrix = [];
-for (let tall1 = 1; tall1 <= x; tall1++){
-  // console.log(tall1 + 'tall1');
-  for (let tall2 = 1; tall2 <= x; tall2++ ) {
-    // console.log(tall2 + 'tall2');
-    // console.log(`${tall1} ${tall2} ganget`);
-    multiplicationMatrix.push(tall1*tall2);
-  }
-}
+          columnCount = x;
+          multiplicationMatrix = [];
+          for (let tall1 = 1; tall1 <= x; tall1++){
+          // console.log(tall1 + 'tall1');
+          for (let tall2 = 1; tall2 <= x; tall2++ ) {
+          // console.log(tall2 + 'tall2');
+          // console.log(`${tall1} ${tall2} ganget`);
+          multiplicationMatrix.push(tall1*tall2);
+        }   
+      }
 show();
         }
 

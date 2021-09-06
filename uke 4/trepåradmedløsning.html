@@ -58,12 +58,12 @@
 
   <main id='app'></main>
   <script>
-    //model
+//model
     let board = ['','','', '','','', '','','' ]; 
-    let harJegVunnet = '';
+    let hvemHarVunnet = '';
     let vinnerTekst ='';
 
-    //view
+//view
   showBoard();
   function showBoard() {
   document.getElementById('app').innerHTML = `
@@ -88,7 +88,7 @@
     `;
  
   }
-    //controller
+//controller
   
     // <!--
     // 1. Grunnleggende HTML
@@ -96,9 +96,10 @@
     // 3. Hente ut element i Javascript - "this" eller via id
     // 4. Endre HTML til et element vha. Javascript.
     // -->
+    
    
-        function setX(divIndex, boardIndex) {
-          if (harJegVunnet == 'x' || harJegVunnet == 'o') {
+      function setX(divIndex, boardIndex) {
+          if (hvemHarVunnet == 'x' || hvemHarVunnet == 'o') {
             return
           }
             if (board[boardIndex] == '') {
@@ -111,7 +112,7 @@
           
           }
 
-        function setRandom() {
+      function setRandom() {
             let blankRuteIndex = Array.from(board.keys()).filter(i=>board[i]==='');
             let tilfeldigBlankIndex = blankRuteIndex[Math.floor(Math.random() * blankRuteIndex.length)];
             board[tilfeldigBlankIndex] = 'o';
@@ -119,7 +120,7 @@
             showBoard();
         }
 
-        function checkWinning(){
+      function checkWinning(){
             return sjekkEnMulighet(0,1,2) ||
             sjekkEnMulighet(3,4,5) ||
             sjekkEnMulighet(6,7,8) ||
@@ -131,27 +132,28 @@
             sjekkEnMulighet(2,4,6);
           
 
-            function sjekkEnMulighet(index1, index2, index3) {
+        function sjekkEnMulighet(index1, index2, index3) {
               if (board[index1] == 'x' && board[index1] == board[index2] && board[index1] == board[index3]) {
-                harJegVunnet = 'x';
+                hvemHarVunnet = 'x';
               } else if (board[index1] == 'o' && board[index1] == board[index2] && board[index1] == board[index3]) {
-                harJegVunnet = 'o';
+                hvemHarVunnet = 'o';
               } 
             
             }
         }
 
+        
       function vin(){
-        if (harJegVunnet == 'x'){
+        if (hvemHarVunnet == 'x'){
               vinnerTekst += `X har vunnet!!`;
-            } else if (harJegVunnet == 'o'){
+            } else if (hvemHarVunnet == 'o'){
               vinnerTekst += `O har vunnet!!`;
           }
       }
 
       function restart(){
         board = ['','','', '','','', '','','' ];
-        harJegVunnet = '';
+        hvemHarVunnet = '';
         vinnerTekst = '';
         showBoard();
         
