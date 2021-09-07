@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Gangetabell</title>
+  <style>
+    #multiplicationMatrix {
+      font-size: 0.7rem;
+      display: grid;
+    }
+  </style>
 </head>
 
 <body>
@@ -31,22 +37,22 @@
         function show() {
           let html = '';
           for (let i = 0; i < multiplicationMatrix.length; i++) {
-            let number = multiplicationMatrix[i];
-            html += `<div>${number}</div>`;
+            let index = multiplicationMatrix[i];
+            html += `<div>${index}</div>`;
           }
           multiplicationMatrixDiv.innerHTML = html;
-          teller .innerHTML = `Tall valgt: ${columnCount} <hr>`
-          multiplicationMatrixDiv.style.display = 'grid';
-          multiplicationMatrixDiv.style.gridTemplateColumns = `repeat(${columnCount},40px)`;
+
+          teller.innerHTML = `Tall valgt: ${columnCount} <hr>`
+          multiplicationMatrixDiv.style.gridTemplateColumns = `repeat(${columnCount},20px)`;
           }
 
         function slider(x){
-
           columnCount = x;
           multiplicationMatrix = [];
           for (let tall1 = 1; tall1 <= x; tall1++){
           // console.log(tall1 + 'tall1');
-          for (let tall2 = 1; tall2 <= x; tall2++ ) {
+
+          for (let tall2 = 1; tall2 <= x; tall2++) {
           // console.log(tall2 + 'tall2');
           // console.log(`${tall1} ${tall2} ganget`);
           multiplicationMatrix.push(tall1*tall2);

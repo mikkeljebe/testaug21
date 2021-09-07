@@ -3,8 +3,9 @@ let antallSirkler = 25;
 let selectedLampIndex = 12;
 let startTime = '';
 let finishTime = '';
-let spentMilliseconds = '';
-let spentSeconds = '';
+let spentSeconds ='';
+let spentMilliseconds= '';
+
 let antallTrykk = 0;
 
 //view
@@ -33,16 +34,18 @@ function updateView() {
     html += `
       <div onclick='${skruPå}' class="lamp ${valgtLampe} ${førstPåLinja}">${divText}</div>  
       `;
-   document.getElementById("app").innerHTML = html;
+   
   }
+  spentSeconds === '' ? '' : html += `<div class='tid'>Du brukte ${spentSeconds} sekunder</div>`;
+  document.getElementById("app").innerHTML = html;
 }
 
 //controller
 function onOff() {
   selectedLampIndex = Math.floor(Math.random() * 25);
   finishTime = new Date().getTime();
-  let spentMilliseconds = Math.floor(finishTime - startTime);
-  let spentSeconds = spentMilliseconds / 1000;
+  spentMilliseconds = Math.floor(finishTime - startTime);
+  spentSeconds = spentMilliseconds / 1000;
   antallTrykk++;
   console.log(`Du brukte ${spentSeconds} sekunder`);
   updateView();
