@@ -39,36 +39,36 @@ const linker =[
     tittel: 'Musovercelle this',
   },
   {
-    link: 'uke2/5 kode som kjører når siden lastes.html',
+    link: 'uke2/5_kode_som_kjører_når_siden_lastes.html',
     tittel: 'Loadetider',
   },
   {
-    link: 'uke2/Ferdighet 06 - Sette sammen tekst av flere deler og bruke dette til å lage.html',
+    link: 'uke2/Ferdighet_06_Sette sammen_tekst_av_flere_deler_og_bruke_dette_til_å_lage.html',
     tittel: 'Tekst av flere deler',
   },
   {
-    link: 'uke2/ferdighet 7 - Sette variabel til resultat av et regnestykke.html',
+    link: 'uke2/ferdighet_7_Sette_variabel_til_resultat_av_et_regnestykke.html',
     tittel: 'Variabel som resultat av et regnestykke',
   },
   {
-    link: 'uke2/Ferdighet 9 - Endre andre ting: classList, style.html',
+    link: 'uke2/Ferdighet_9_Endre_andre_ting:_classList,_style.html',
     tittel: 'Endre andre ting enn innerHTML',
   },
   {
-    link: 'uke2/Funksjoner med parametere2.html',
+    link: 'uke2/Funksjoner_med_parametere2.html',
     tittel: 'Funksjoner med parametere',
   },
   {
-    link: 'uke2/Ferdighet 12 - funksjoner med returverdi.html',
+    link: 'uke2/Ferdighet_12_funksjoner_med_returverdi.html',
     tittel: 'Funksjoner med returverdi',
   },
   {
     overskrift: 'Uke 3',
-    link: "uke 3/MVC.html",
+    link: "uke3/MVC.html",
     tittel: 'MVC',
   },
   {
-    link: "uke 3/kalkulatormvc.html",
+    link: "uke3/kalkulatormvc.html",
     tittel: 'Kalkulator MVC',
   },
   {
@@ -89,7 +89,6 @@ const linker =[
 ];
 
 let linkerHtml ='';
-let cssClass = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ];
 let footerText = '';
 
 
@@ -99,7 +98,23 @@ show();
 function show() {
 	let html ='';
   html += `
-  <div class="header"><h1>Mikkels testside!</h1></div>
+  <div class="navbar">
+  <div class="dropdown">
+  <div class="dropbtn">
+  <Svg width="50" height="50" viewBox="0 0 50 50">
+  <rect class="rect" width="20" height="2" x="15" y="18" ></rect>
+  <rect class="rect" width="20" height="2" x="15" y="25"></rect>
+  <rect class="rect" width="20" height="2" x="15" y="32"></rect>
+  </svg>
+  </div>
+  <div class="dropdown-content">
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <a href="#">Link 3</a>
+  </div>  
+  </div>
+  </div>
+  
   <div class="main">
   `;
   
@@ -109,7 +124,7 @@ function show() {
   html += addDivWithLinks('div4', 0, 17); //divNummer, antallinker, fraIndexNr i linker[].
   html += addDivWithLinks('div5', 0, 18); //divNummer, antallinker, fraIndexNr i linker[].
   html += addDivWithLinks('div6', 0, 19); //divNummer, antallinker, fraIndexNr i linker[].
-  html += addDiv('footer');
+  html += add1Div('footer');
   footerText += `Dette er en footer`;
       
   html += `
@@ -145,11 +160,8 @@ function show() {
   show();
 };
 
-function addDiv(klasse, antall){
-  
-  let divHTML = `<div class="${klasse}"></div>`
-
-return divHTML;
-
+function add1Div(klasse){
+  let divHTML = `<div class="${klasse}"></div>`;
+  return divHTML;
   show();
 }
