@@ -99,6 +99,7 @@ function show() {
 	let html ='';
   html += `
   <div class="navbar">
+  
   <div class="dropdown">
   <div class="dropbtn">
   <Svg width="50" height="50" viewBox="0 0 50 50">
@@ -113,6 +114,8 @@ function show() {
   <a href="#">Link 3</a>
   </div>  
   </div>
+  
+  <div class="headertext">Mikkel</div>
   </div>
   
   <div class="main">
@@ -124,17 +127,16 @@ function show() {
   html += addDivWithLinks('div4', 0, 17); //divNummer, antallinker, fraIndexNr i linker[].
   html += addDivWithLinks('div5', 0, 18); //divNummer, antallinker, fraIndexNr i linker[].
   html += addDivWithLinks('div6', 0, 19); //divNummer, antallinker, fraIndexNr i linker[].
-  html += add1Div('footer');
+  
+  html += `<div class='footerDiv'>${add1Div('footer')}</div>`;
   footerText += `Dette er en footer`;
       
-  html += `
 
+html += `</div>`;
 
-
-</div>
 
 	
-	`;
+	
 
 	document.getElementById('app').innerHTML = html;
 	document.getElementsByClassName('footer')[0].innerHTML = footerText;
