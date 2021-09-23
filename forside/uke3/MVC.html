@@ -45,9 +45,13 @@
         }
 
         function buyUpgrade() {
-            if (points < 10) return;
+            if (points < 10) {
+                alert('Du har ikke fått 10 poeng enda')
+            } else {
             points -= 10;
             pointsPerClick++;
+             };
+
             updateView();
         }
         function juks(){

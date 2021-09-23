@@ -8,33 +8,34 @@ const linker =[
   },
   {
     id:2,
-    link: 'cssgrid/cssgrid.html',
+    link: 'uke1/cssgrid/cssgrid.html',
     tittel: 'Css grid',
   },
   {
     id:3,
-    link: "cssgrid/cssgrid2.html",
+    link: "uke1/cssgrid/cssgrid2.html",
     tittel: 'Css grid2',
   },
   {
     id:4,
-    link: 'ludo/ludo.html',
-    tittel: 'Ludo css',
+    link: 'uke1/ludo/ludo.html',
+    tittel: 'Ludobrett svg',
   },
   {
     id:5,
-    link: 'photoblog.html',
-    tittel: 'Photoblog',
+    link: 'uke1/photoblog.html',
+    tittel: 'Fotoblogg',
   },
   {
     id:6,
     overskrift: 'Uke 2',
-    link: "uke2/onclick.html",
+    link: 'uke2/onclick.html',
     tittel: 'Onclick',
   },
   { id:7,
     link: 'uke2/onclick2.html',
     tittel: 'Onclick 2',
+    
   },
   {
     id:8,
@@ -55,7 +56,7 @@ const linker =[
     tittel: 'Tekst av flere deler',
   },
   {
-    id:2,
+    id:12,
     link: 'uke2/ferdighet_7_Sette_variabel_til_resultat_av_et_regnestykke.html',
     tittel: 'Variabel som resultat av et regnestykke',
   },
@@ -66,7 +67,7 @@ const linker =[
   },
   {
     id:14,
-    link: 'uke2/Funksjoner_med_parametere2.html',
+    link: 'uke2/Funksjoner_med_parametere.html',
     tittel: 'Funksjoner med parametere',
   },
   {
@@ -111,10 +112,6 @@ const linker =[
 
 const model = {
   currentPage: 'Home',
-  searchInput: '',
-  resultArr: '',
-  filteredList: linker.filter(tulli => tulli.tittel && tulli.link),
   result: '',
-  classList: 'show',
-
+  searchQuery: '',
 };

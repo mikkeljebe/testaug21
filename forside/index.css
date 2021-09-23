@@ -6,6 +6,14 @@ body    {
 		font-weight: 300;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
 h1 {
 	color: #f2f2f2;
 	text-align: center;
@@ -18,16 +26,59 @@ h1 {
 	padding: 0px 20px;
 }
 
+.searchWrapper {
+	display:flex;
+	flex-direction: column;
+  float: right;
+  align-items: center;
+	width: 16rem;
+	
+}
+
 .searchBar {
-  width: 100%;
 	display: flex;
   float: right;
 	margin: 3px 15px;
   align-items: center;
-	max-width: 15.25rem;
+	width: 15.25rem;
 }
 
-#searchQueryInput {
+.searchDropdown-content {
+	display: block;
+	float: right;
+	margin-top: 5px;
+	line-height: 1rem;
+  border-radius: 5px;
+	background-color: #cac9c9;
+	color: #fcfcfc;
+	text-align: left;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	
+}
+
+.searchDropdown-content  li {
+	text-decoration: none;
+	padding: 5px;
+	color: #4d4d4d; 
+	width: 15rem;
+	
+}
+
+.searchDropdown-content li a {
+	color: #242424;
+}
+
+
+.searchDropdown-content li:hover {
+	background-color: #f1f1f1;
+	border-radius: 5px;
+	
+
+}
+
+
+
+.searchQueryInput {
   width: 100%;
   height: 2rem;
   background: #f5f5f5;
@@ -38,7 +89,7 @@ h1 {
   font-size: 1rem;
 }
 
-#searchQuerySubmit {
+.searchQuerySubmit {
   width: 3.5rem;
   height: 2.8rem;
   margin-left: -2.5rem;
@@ -47,9 +98,7 @@ h1 {
   outline: none;
 }
 
-#searchQuerySubmit:hover {
-  cursor: pointer;
-}
+
 
 .navbar {
 		background-color: rgb(0, 0, 0);
@@ -65,8 +114,7 @@ h1 {
 		font-size: 17px;
 		height: 50px;
 		line-height: 50px;
-			
-	}
+}
  
 .dropdown {
 	width: 50px;
@@ -80,7 +128,6 @@ h1 {
   color: white;
   text-align: center;
   text-decoration: none;
-	
 }
 
 .dropdown .dropbtn {
@@ -131,42 +178,12 @@ h1 {
 }
 
 /* Change the color of links on hover */
-.navbar a:hover {
-  color: black;
+.dropdown a:hover {
+  color: rgb(134, 134, 134);
 	font-weight: 500;
 }
 
 
-/* searchDropdown Content (Hidden by Default) */
-.searchDropdown-content {
-	display: none;
-
-	float: right;
-  min-width: 400px;
-	margin: 30px;
-	color: black;
-  
-	background-color: #000000;
-	color: #fcfcfc;
-	text-align: left;
-		
-  z-index: 1;
-}
-
-/* Links inside the searchDropdown */
-.searchDropdown-content  li {
-	text-decoration: none;
-  
-}
-
-/* Change color of dropdown links on hover */
-.searchdropdown-content a:hover {background-color: #f1f1f1}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {
-	display:block;
-
-}
 
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -243,9 +260,6 @@ h1 {
 	}
 
 	.ruter {
-		/* background-color: rgb(183, 208, 215); */
-		/* border-radius: 2%; */
-		
 		font-size: 1.2rem;
 		font-weight: 300;
 		padding: 50px;
@@ -257,10 +271,9 @@ h1 {
 	}
 
 	.ruter a:hover {
-    color: #000000;
+  color: #000000;
 	margin-left: 1px;
 	font-weight: 500;
-	
 }
 
 .footerDiv {
@@ -327,6 +340,10 @@ h1 {
 		grid-column: 1;
 		grid-row: 8;
 	}
+	.searchBar {
+		width: 10rem;
+	}
+	
 };
 
 @media only screen and (max-width: 1000px) and (min-width: 800px) {

@@ -1,4 +1,8 @@
 function show() {
+  const app = document.getElementById('app'); 
+ 
+
+   
    let html = navBar();
 
   
@@ -15,20 +19,33 @@ function show() {
 // //     default:
 // //         html = noPageFound();  
 }
-  
 
-
-let footerText = `Dette er en footer`;
 html += `<div class="footerDiv">${add1Div('footer')}</div>`;
-
-
-const app = document.getElementById('app');
 app.innerHTML = html;
 
-
+let footerText = `Dette er en footer`;
 const footer = document.getElementsByClassName('footer')[0];
+
 footer.innerText = footerText;
 
-  
+let input = document.getElementsByClassName("searchQueryInput")[0];
+
+setCaretPosition(input, input.value.length);
+
+function setCaretPosition(input, pos) {
+  if (input.setSelectionRange) {
+    input.focus();
+    input.setSelectionRange(pos, pos);
+};
+};
+
+
+window.onkeydown = function(event) {
+  if ( event.keyCode == 27 ) {
+      model.result = '';
+      model.searchQuery ="";
+      show();
+  }
+};
 };
 
