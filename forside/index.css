@@ -1,32 +1,81 @@
 body    {
     padding: 0;
     margin: 0;
-		font-family: 'Roboto', sans-serif;
+		font-family: 'Roboto', Arial, sans-serif;
 		line-height: 1.2rem;
 		font-weight: 300;
 }
-	.navbar {
+
+h1 {
+	color: #f2f2f2;
+	text-align: center;
+	padding-left: 20px;
+	text-decoration: none;
+	font-size: 17px;
+}
+.navbar section {
+	float: right;
+	padding: 0px 20px;
+}
+
+.searchBar {
+  width: 100%;
+	display: flex;
+  float: right;
+	margin: 3px 15px;
+  align-items: center;
+	max-width: 15.25rem;
+}
+
+#searchQueryInput {
+  width: 100%;
+  height: 2rem;
+  background: #f5f5f5;
+  outline: none;
+  border: none;
+  border-radius: 1.625rem;
+  padding: 0 3.5rem 0 1.5rem;
+  font-size: 1rem;
+}
+
+#searchQuerySubmit {
+  width: 3.5rem;
+  height: 2.8rem;
+  margin-left: -2.5rem;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+#searchQuerySubmit:hover {
+  cursor: pointer;
+}
+
+.navbar {
 		background-color: rgb(0, 0, 0);
 		/* overflow: hidden; */
 		position: fixed;
 		width: 100vw;
 		height: 50px;
+		float: left;
+		display: block;
+		color: #fcfcfc;
+		text-align: center;
+		text-decoration: none;
+		font-size: 17px;
+		height: 50px;
+		line-height: 50px;
+			
 	}
-
-.navbar h1 {
-    color: #f2f2f2;
-    text-align: center;
-    padding-left: 20px;
-    text-decoration: none;
-    font-size: 17px;
-}
+ 
 .dropdown {
 	width: 50px;
+	height: 50px;
 	float: left;
 	overflow: hidden;
 }
 
-.navbar li, .dropbtn {
+.dropbtn {
   display: inline-block;
   color: white;
   text-align: center;
@@ -52,14 +101,9 @@ body    {
 	left: 0px;
   background-color: #000000;
   min-width: 200px;
- 
   z-index: 1;
 }
 
-li.dropdown {
-  display: inline-block;
-
-}
 
 .dropdown-content a {
 	float: none;
@@ -76,17 +120,7 @@ li.dropdown {
 
 
 /* Style the links inside the navigation bar */
-.navbar {
-  float: left;
-  display: block;
-  color: #fcfcfc;
-  text-align: center;
-  text-decoration: none;
-  font-size: 17px;
-	height: 50px;
-	line-height: 50px;
-	
-}
+
 .headertext {
 	float: right;
 	padding-right: 20px;
@@ -98,18 +132,49 @@ li.dropdown {
 
 /* Change the color of links on hover */
 .navbar a:hover {
-  background-color: rgb(168,197,219);
   color: black;
 	font-weight: 500;
+}
+
+
+/* searchDropdown Content (Hidden by Default) */
+.searchDropdown-content {
+	display: none;
+
+	float: right;
+  min-width: 400px;
+	margin: 30px;
+	color: black;
+  
+	background-color: #000000;
+	color: #fcfcfc;
+	text-align: left;
+		
+  z-index: 1;
+}
+
+/* Links inside the searchDropdown */
+.searchDropdown-content  li {
+	text-decoration: none;
+  
+}
+
+/* Change color of dropdown links on hover */
+.searchdropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+	display:block;
+
 }
 
 
 /* Hide the link that should open and close the topnav on small screens */
 
 
-.main {
+.mainView {
 	display: grid;
-  grid-template-rows: 50px repeat(4, 60vh) 200px;
+  grid-template-rows: 50px repeat(3, 60vh);
   grid-template-columns: 1fr 1fr 1fr ;
 	overflow-y: scroll;
 }
@@ -131,6 +196,10 @@ li.dropdown {
 		grid-row: 2;
 		background-color: rgb(168,197,219);
 		padding-top: 120px;
+		display: flex;
+  	justify-content: center;
+  	align-items:center;
+		flex-direction: column;
 	
 	}
 
@@ -145,9 +214,13 @@ li.dropdown {
 	}
 
 	.div4 {
-		grid-column: 1/4;
+		grid-column: 1/3;
 		grid-row: 4;
 		background-color: rgb(205, 205, 205);
+		display: flex;
+  	justify-content: center;
+  	align-items:center;
+		flex-direction: column;
 	}
 
 	.div5 {
@@ -155,13 +228,18 @@ li.dropdown {
 		grid-column: 1/3;
 		grid-row: 3;
 		padding-bottom: 20px;
-		background: center/cover url('maxim-berg.jpg');
+		background: center/cover url('/forside/bilder/maxim-berg.jpg');
+		color: ;
 	}
 
 	.div6 {
 		
-		grid-column: 2/4;
-		grid-row: 5;
+		grid-column: 3/4;
+		grid-row: 4;
+		display: flex;
+  	justify-content: center;
+  	align-items:center;
+		flex-direction: column;
 	}
 
 	.ruter {
@@ -185,29 +263,33 @@ li.dropdown {
 	
 }
 
-	.footerDiv {
-		grid-column: 1/4;
-		grid-row: 42;
-	
-		background-color: rgb(0, 0, 0);
+.footerDiv {
+	background-color: rgb(200, 200, 200);
+	width: 100vw;
+	height: 50px;
+	position:fixed;
+  bottom: 0;
+
+}
+
+	.footer {
+		margin: 0px;
 		text-align: center;
 		line-height: 50px;
-		color: white;
-	}
-	.footer {
-		margin: 50px;
-		color: #4d4d4d;
+		font-size: 0.8rem;
+		color: rgb(56, 56, 56);
+
 	}
 
-.main ul {
+.mainView ul {
 	padding: 10px;
 	font-weight: 100;
 	font-size: 1rem;
 }
 
 @media only screen and (max-width: 800px) {
-  .main {
-		grid-template-rows: 50px repeat(6, 60vh) 200px;
+  .mainView {
+		grid-template-rows: 50px repeat(6, 60vh);
 		grid-template-columns: 1fr ;
 	}
 
@@ -248,7 +330,7 @@ li.dropdown {
 };
 
 @media only screen and (max-width: 1000px) and (min-width: 800px) {
-  .main {
+  .mainView {
 		grid-template-rows: 50px repeat(4, 60vh) 200px;
 		grid-template-columns: 1fr 1fr ;
 	}
@@ -288,3 +370,4 @@ li.dropdown {
 		grid-row: 6;
 	}
 };
+
