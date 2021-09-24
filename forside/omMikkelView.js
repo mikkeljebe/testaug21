@@ -17,9 +17,9 @@ function omMikkelView(){
     </li>
   </ul>
   <hr>
-    
-  
   </div>
-  </div>`
+  </div>
+  `;
+
   return html;
 }

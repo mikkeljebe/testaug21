@@ -1,25 +1,25 @@
- function addDivWithLinks(klasse, antall, fraIndexNr){
-  let linkerHtml = '';
-  linkerHtml += `<div class="${klasse} ruter">${linker[fraIndexNr].overskrift}<ul>`;
+function addDivWithLinks(klasse, antall, fraIndexNr){
+  let divWithlinksHTML = '';
+  divWithlinksHTML += `<div class="${klasse} ruter">${linker[fraIndexNr].overskrift}<ul>`;
   
   if (!linker[fraIndexNr].link){
-    linkerHtml += '</ul></div>';
-    return linkerHtml;
+    divWithlinksHTML += '</ul></div>';
+    return divWithlinksHTML;
   } else {
      for (let i = fraIndexNr; i < fraIndexNr+antall; i++) {
-       linkerHtml += `<li><a href=${linker[i].link}>${linker[i].tittel}</a></li>`;
+       divWithlinksHTML += `<li><a href=${linker[i].link}>${linker[i].tittel}</a></li>`;
      };
-   linkerHtml += '</ul></div>';
-   return linkerHtml;
-   };
-}
+   divWithlinksHTML += '</ul></div>';
+   return divWithlinksHTML;
+  };
+};
 
- function add1Div(klasse){
+function add1Div(klasse){
   let divHTML = `<div class="${klasse}"></div>`;
   return divHTML;
- }
+};
 
- function navBar(){
+function navBar(){
 
    let navHtml = `
     <div class="navbar">
@@ -57,27 +57,25 @@
     `;
     
     return navHtml;
-  }
+};
 
 function search(searchTerm){
-
-  let filteredData = linker
+    let filteredData = linker
     .filter(elements => elements.tittel && elements.link)
     .filter(element => 
       element.link.toLowerCase().includes(searchTerm.toLowerCase())|| 
       element.tittel.toLowerCase().includes(searchTerm.toLowerCase()));
 
-model.result = `<ul id="myUL">Trykk 'esc' for å fjerne søk`;
-for (let i = 0; i < filteredData.length; i++) {
+  model.result = `<ul id="myUL">Trykk 'esc' for å fjerne søk`;
+  for (let i = 0; i < filteredData.length; i++) {
     model.result +=  `<li class="a"><a href="${filteredData[i].link}">${filteredData[i].tittel}</a></li>`;
-};
-if (filteredData.length == 0) {
-  model.result +=  `<li onclick="window.location.reload()">Ingen treff</li>`;
-};
+  };
+  
+  if (filteredData.length == 0) {
+    model.result +=  `<li onclick="window.location.reload()">Ingen treff</li>`;
+  };
 
   model.result += `</ul>`;
-
-
 };
 
 function removeSearch(){
@@ -94,7 +92,5 @@ function toHome(){
 
 function toAbout(){
   model.currentPage = 'Om';
-  console.log(model.currentPage);
-  
   show();
 }
