@@ -10,15 +10,18 @@ function show() {
     case 'Home':
         html += mainView();
        break;
-    // case 'Search':
-    //     html += ();
-    //    break;
+    case 'Om':
+        html += omMikkelView();
+       break;
 // //     case 'Contact':
 // //         html += contactView();
 // //         break;
 // //     default:
 // //         html = noPageFound();  
 }
+
+console.log(model.currentPage);
+
 
 html += `<div class="footerDiv">${add1Div('footer')}</div>`;
 app.innerHTML = html;
@@ -43,7 +46,7 @@ function setCaretPosition(input, pos) {
 window.onkeydown = function(event) {
   if ( event.keyCode == 27 ) {
       model.result = '';
-      model.searchQuery ="";
+      model.searchQuery =" ";
       show();
   }
 };

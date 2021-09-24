@@ -34,13 +34,13 @@
     
     </div>
     <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+    <a onclick="toHome()">Home</a>
+    
+    <a onclick="toAbout()">About</a>
     </div>  
     </div>
     
-    <section>Mikkel</section>
+    <section onclick="toAbout()">Mikkel</section>
     
     <div id="searchWrapper" class="searchWrapper">
    <div class="searchBar">
@@ -87,4 +87,14 @@ function removeSearch(){
   }
 }
 
+function toHome(){
+  model.currentPage = 'Home';
+  show();
+}
 
+function toAbout(){
+  model.currentPage = 'Om';
+  console.log(model.currentPage);
+  
+  show();
+}
