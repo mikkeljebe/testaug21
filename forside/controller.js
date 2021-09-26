@@ -44,7 +44,7 @@ function navBar(){
     
     <div id="searchWrapper" class="searchWrapper">
    <div class="searchBar">
-   <input class="searchQueryInput" type="text" autocomplete="off" onclick="removeSearch()" oninput="search(this.value), model.searchQuery = this.value, show()" " placeholder="Søk.." value="${model.searchQuery}"/>
+   <input class="searchQueryInput" type="text" autocomplete="off" onclick="removeSearch()" oninput="search(this.value)" placeholder="Søk.." value="${model.searchQuery}"/>
      <button class="searchQuerySubmit" type="submit">
        <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#666666" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
        </svg>
@@ -60,6 +60,7 @@ function navBar(){
 };
 
 function search(searchTerm){
+  model.searchQuery = searchTerm;
     let filteredData = linker
     .filter(elements => elements.tittel && elements.link)
     .filter(element => 
@@ -72,10 +73,11 @@ function search(searchTerm){
   };
   
   if (filteredData.length == 0) {
-    model.result +=  `<li onclick="window.location.reload()">Ingen treff</li>`;
+    model.result +=  `<li">Ingen treff</li>`;
   };
 
   model.result += `</ul>`;
+  show();
 };
 
 function removeSearch(){
