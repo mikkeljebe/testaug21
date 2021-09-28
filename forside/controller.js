@@ -80,6 +80,13 @@ function search(searchTerm){
   show();
 };
 
+function setCaretPosition(input, pos) {
+  if (input.setSelectionRange) {
+  input.focus();
+  input.setSelectionRange(pos, pos);
+  };
+};
+
 function removeSearch(){
   if (model.result.length > 4) {
     model.result = '';
@@ -96,3 +103,12 @@ function toAbout(){
   model.currentPage = 'Om';
   show();
 }
+
+// 'Esc' key to close search. 
+window.onkeydown = function(event) {
+  if ( event.keyCode == 27 ) {
+      model.result = '';
+      model.searchQuery =" ";
+      show();
+  }
+};
