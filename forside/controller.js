@@ -27,20 +27,21 @@ function navBar(){
     <div class="dropdown">
     <div class="dropbtn">
     <Svg width="50" height="50" viewBox="0 0 50 50">
-    <rect class="rect" width="20" height="2" x="15" y="18" ></rect>
-    <rect class="rect" width="20" height="2" x="15" y="25"></rect>
-    <rect class="rect" width="20" height="2" x="15" y="32"></rect>
+    <rect class="rect" width="20" height="2" quote="15" y="18" ></rect>
+    <rect class="rect" width="20" height="2" quote="15" y="25"></rect>
+    <rect class="rect" width="20" height="2" quote="15" y="32"></rect>
     </svg>
     
     </div>
     <div class="dropdown-content">
-    <a onclick="toHome()">Home</a>
     
-    <a onclick="toAbout()">About</a>
+    <a onclick="changeView('Home')">Home</a>
+    <a onclick="changeView('Om')">About</a>
+    
     </div>  
     </div>
     
-    <section onclick="toAbout()">Mikkel</section>
+    <section onclick="changeView('Om')">Mikkel</section>
     
     <div id="searchWrapper" class="searchWrapper">
    <div class="searchBar">
@@ -94,15 +95,11 @@ function removeSearch(){
   }
 }
 
-function toHome(){
-  model.currentPage = 'Home';
+function changeView(text){
+  model.currentPage = text;
   show();
 }
 
-function toAbout(){
-  model.currentPage = 'Om';
-  show();
-}
 
 // 'Esc' key to close search. 
 window.onkeydown = function(event) {
@@ -112,3 +109,75 @@ window.onkeydown = function(event) {
       show();
   }
 };
+
+
+ 
+
+
+async function getQuotesFromApi(){
+  showLoadingSpinner();
+     
+  const apiUrl = 'https://type.fit/api/quotes';
+  try {
+    const response = await fetch(apiUrl);
+    apiQuotes = await response.json();
+    const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
+    newQuote(quote);
+    
+  } catch (error){
+    console.log('error');
+  }
+
+}
+
+function newQuote(quote){
+//   // random quote from array
+  populateHtml(quote);
+  removeLoadingSpinner();
+}
+
+
+
+//  // Check if authorfield is blank and replace with unknown
+ function populateHtml(quote) {
+  const quoteText = document.getElementById('quote-span')
+  const authorText = document.getElementById('author')
+  
+
+  if (!quote.author) {
+    authorText.textContent = 'Unknown';
+  } else {
+    authorText.textContent = quote.author;
+  }
+//   // check the quote length to determine styling
+  if (quote.text.length > 100) {
+    quoteText.classList.add('long-quote')
+  } else {
+    quoteText.classList.remove('long-quote')
+  }
+  quoteText.textContent = quote.text
+}
+
+function showLoadingSpinner(){
+  const loader = document.getElementById('loader');
+  const quoteContainer = document.getElementById('quote-container')
+  loader.hidden = false;
+  quoteContainer.hidden = true;
+}
+
+function removeLoadingSpinner(){
+  const quoteContainer = document.getElementById('quote-container')
+  const loader = document.getElementById('loader');
+  quoteContainer.hidden = false;
+  loader.hidden = true;
+}
+
+
+// tweet quote
+function tweetQuote(){
+  const quoteText = document.getElementById('quote')
+  const authorText = document.getElementById('author')
+
+  const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
+  window.open(twitterUrl, '_blank');
+}

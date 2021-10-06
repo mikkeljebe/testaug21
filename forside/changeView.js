@@ -8,8 +8,10 @@ function show() {
   switch (model.currentPage) {
     case 'Home': html += mainView(); break;
     case 'Om': html += omMikkelView(); break;
+    case 'MB': html += moneyButtonView(); break;
   };
   
+
   // Footer
   html += `<div class="footerDiv">${add1Div('footer')}</div>`;
   app.innerHTML = html;
@@ -21,6 +23,11 @@ function show() {
   // Set focus on searchbar
   let searchQueryInput = document.getElementsByClassName("searchQueryInput")[0];
   setCaretPosition(searchQueryInput, searchQueryInput.value.length);
+
+  if (model.currentPage == 'Home'){
+    getQuotesFromApi();
+    
+  }
 };
 
 

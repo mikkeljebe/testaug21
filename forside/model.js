@@ -3,7 +3,7 @@ const linker =[
   {
     id:1,
     overskrift: 'Uke 1',
-    link: 'svgsnømann.html',
+    link: 'uke1/svgsnømann.html',
     tittel: 'Svg snømann',
   },
   {
@@ -115,3 +115,7 @@ const model = {
   result: '',
   searchQuery: '',
 };
+
+// Array to populate with getQuotesFromApi()
+let apiQuotes = [];
+
