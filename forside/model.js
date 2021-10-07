@@ -94,6 +94,8 @@ const linker =[
   {
     id:19,
     overskrift: '',
+    link: "https://mikkeljebe.github.io/Modul-2/infiniteScroll/index.html",
+    tittel: 'Unsplash API',
     
     
   },
