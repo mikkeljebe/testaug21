@@ -24,6 +24,7 @@ function show() {
   let searchQueryInput = document.getElementsByClassName("searchQueryInput")[0];
   setCaretPosition(searchQueryInput, searchQueryInput.value.length);
 
+  
   if (model.currentPage == 'Home'){
     getQuotesFromApi();
     

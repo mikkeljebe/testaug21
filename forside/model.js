@@ -120,4 +120,6 @@ const model = {
 
 // Array to populate with getQuotesFromApi()
 let apiQuotes = [];
+let quote = '';
+
 

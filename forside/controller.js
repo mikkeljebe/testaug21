@@ -118,32 +118,35 @@ async function getQuotesFromApi(){
   showLoadingSpinner();
      
   const apiUrl = 'https://type.fit/api/quotes';
+  if (apiQuotes.length<5){
   try {
     const response = await fetch(apiUrl);
     apiQuotes = await response.json();
-    const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
-    newQuote(quote);
+    quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
+    newQuote();
     
   } catch (error){
     console.log('error');
   }
+} else {populateHtml(); removeLoadingSpinner()};
 
 }
 
-function newQuote(quote){
+function newQuote(){
 //   // random quote from array
-  populateHtml(quote);
+  quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
+  populateHtml();
   removeLoadingSpinner();
 }
 
 
 
 //  // Check if authorfield is blank and replace with unknown
- function populateHtml(quote) {
+ function populateHtml() {
   const quoteText = document.getElementById('quote-span')
   const authorText = document.getElementById('author')
-  
-
+  console.log(quote);
+   
   if (!quote.author) {
     authorText.textContent = 'Unknown';
   } else {
@@ -175,8 +178,10 @@ function removeLoadingSpinner(){
 
 // tweet quote
 function tweetQuote(){
-  const quoteText = document.getElementById('quote')
+  const quoteText = document.getElementById('quote-span')
   const authorText = document.getElementById('author')
+  console.log(quoteText);
+  
 
   const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
   window.open(twitterUrl, '_blank');
