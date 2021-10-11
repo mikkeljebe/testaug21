@@ -27,9 +27,9 @@ function navBar(){
     <div class="dropdown">
     <div class="dropbtn">
     <Svg width="50" height="50" viewBox="0 0 50 50">
-    <rect class="rect" width="20" height="2" quote="15" y="18" ></rect>
-    <rect class="rect" width="20" height="2" quote="15" y="25"></rect>
-    <rect class="rect" width="20" height="2" quote="15" y="32"></rect>
+    <rect class="rect" width="20" height="2" x="15" y="18" ></rect>
+    <rect class="rect" width="20" height="2" x="15" y="25"></rect>
+    <rect class="rect" width="20" height="2" x="15" y="32"></rect>
     </svg>
     
     </div>
