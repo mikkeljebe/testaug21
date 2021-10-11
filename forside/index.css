@@ -248,7 +248,7 @@ h1 {
 		grid-column: 1;
 		grid-row: 3;
 		padding-bottom: 20px;
-		background: center/cover url('testaug21/forside/bilder/maxim-berg.jpg');
+		background: center/cover url('./bilder/maxim-berg.jpg');
 	}
 
 .div6 {
