@@ -102,6 +102,8 @@ const linker =[
   {
     id:20,
     overskrift: 'Overskrift',
+    link: "https://mikkeljebe.github.io/Modul-2/picture-in-picture/index.html",
+    tittel: 'Bilde i bilde deling',
   },
   {
     id:21,

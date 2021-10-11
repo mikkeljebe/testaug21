@@ -145,7 +145,7 @@ function newQuote(){
  function populateHtml() {
   const quoteText = document.getElementById('quote-span')
   const authorText = document.getElementById('author')
-  console.log(quote);
+  
    
   if (!quote.author) {
     authorText.textContent = 'Unknown';
@@ -180,7 +180,7 @@ function removeLoadingSpinner(){
 function tweetQuote(){
   const quoteText = document.getElementById('quote-span')
   const authorText = document.getElementById('author')
-  console.log(quoteText);
+  
   
 
   const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
