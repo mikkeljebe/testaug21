@@ -78,6 +78,7 @@ function search(searchTerm){
   };
 
   model.result += `</ul>`;
+  
   show();
 };
 
